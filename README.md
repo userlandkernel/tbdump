@@ -68,7 +68,12 @@ For help, run with no arguments (*note: -r still unimplemented*):
 
 ### TODO
 
-* Implement recursive mode
+* Implement recursive mode (For now you can use the following snippet with bash):
+```bash
+for i in $(ls $1);
+    do tbdump $1"$i/${i%.*}" > "${i%.*}".tbd;
+done
+```
 * Support inlining re-exports
 * Linux support
 * Tokens:
